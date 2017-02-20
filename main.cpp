@@ -8,23 +8,23 @@ int main(void)
 	dai_kuan_factory dk_factory;
 	int select;
 	double benjin,nianli,niansu;
-	std::cout << "ÇëÊäÈë»¹¿î·½Ê½£º\n0.µÈ¶î±¾Ï¢\n1.µÈ¶î±¾½ð\n" << std::endl;
+	std::cout << "è¯·è¾“å…¥è¿˜æ¬¾æ–¹å¼ï¼š\n0.ç­‰é¢æœ¬æ¯\n1.ç­‰é¢æœ¬é‡‘\n" << std::endl;
 	std::cin >> select;
 	
 	a = dk_factory.create_dai_kuan(select);
 	
-	std::cout << "ÇëÊäÈë±¾½ð£º" << std::endl;
+	std::cout << "è¯·è¾“å…¥æœ¬é‡‘ï¼š" << std::endl;
 	while(1)
 	{
 		if(!(std::cin >> benjin))
 		{
 			std::cin.clear();
 			std::cin.sync();
-			std::cout<<"ÊäÈë´íÎó£¬ÇëÖØÐÂÊäÈë£¡\n"<<std::endl;
+			std::cout<<"è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼\n"<<std::endl;
 		}
 		else if(benjin <= (double)0 )
 		{
-			std::cout <<"ÊäÈëµÄ±¾½ð²»ÄÜÐ¡ÓÚµÈÓÚ0£¬ÇëÖØÐÂÊäÈë£¡"<<std::endl;
+			std::cout <<"è¾“å…¥çš„æœ¬é‡‘ä¸èƒ½å°äºŽç­‰äºŽ0ï¼Œè¯·é‡æ–°è¾“å…¥ï¼"<<std::endl;
 		}
 		else
 		{
@@ -34,18 +34,18 @@ int main(void)
 		
 	}
 	
-	std::cout << "ÇëÊäÈëÄêÀûÂÊ£º" << std::endl;
+	std::cout << "è¯·è¾“å…¥å¹´åˆ©çŽ‡ï¼š" << std::endl;
 	while(1)
 	{
 		if(!(std::cin >> nianli))
 		{
 			std::cin.clear();
 			std::cin.sync();
-			std::cout<<"ÊäÈë´íÎó£¬ÇëÖØÐÂÊäÈë£¡\n"<<std::endl;
+			std::cout<<"è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼\n"<<std::endl;
 		}
 		else if(nianli < (double)0 )
 		{
-			std::cout <<"ÊäÈëµÄÄêÀû²»ÄÜÐ¡ÓÚ0£¬ÇëÖØÐÂÊäÈë£¡"<<std::endl;
+			std::cout <<"è¾“å…¥çš„å¹´åˆ©ä¸èƒ½å°äºŽ0ï¼Œè¯·é‡æ–°è¾“å…¥ï¼"<<std::endl;
 		}
 		else
 		{
@@ -54,18 +54,18 @@ int main(void)
 		}
 	}
 	
-	std::cout << "ÇëÊäÈë»¹¿îÄêÊý£º" << std::endl;
+	std::cout << "è¯·è¾“å…¥è¿˜æ¬¾å¹´æ•°ï¼š" << std::endl;
 	while(1)
 	{
 		if(!(std::cin >> niansu))
 		{
 			std::cin.clear();
 			std::cin.sync();
-			std::cout<<"ÊäÈë´íÎó£¬ÇëÖØÐÂÊäÈë£¡\n"<<std::endl;
+			std::cout<<"è¾“å…¥é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼\n"<<std::endl;
 		}
 		else if(niansu < (double)0 )
 		{
-			std::cout <<"ÊäÈëµÄÄêÊý²»ÄÜÐ¡ÓÚ0£¬ÇëÖØÐÂÊäÈë£¡"<<std::endl;
+			std::cout <<"è¾“å…¥çš„å¹´æ•°ä¸èƒ½å°äºŽ0ï¼Œè¯·é‡æ–°è¾“å…¥ï¼"<<std::endl;
 		}
 		else
 		{
@@ -74,7 +74,23 @@ int main(void)
 		}
 	}
 	a->show_all();
-	std::cout << a->calc_yuehuan() << std::endl;
+	if(select == 0)
+	{
+		std::cout << "æ¯æœˆåº”è¿˜é‡‘é¢ï¼š"<<a->calc_yuehuan()<< std::endl;
+	}
+	else if(select == 1)
+	{
+		while(a->get_yuesu() > a->get_yihuan_yue())
+		{
+			std::cout << "æœ¬æœˆæ˜¯ç¬¬"<<a->get_yihuan_yue()<<"ä¸ªæœˆï¼Œåº”è¿˜é‡‘é¢ï¼š"<< a->calc_yuehuan() <<std::endl;
+		}
+	}
+	else
+	{
+		std::cerr<<"something error";
+	}
+
 	dk_factory.del_dai_kuan(a);
 	return 0;
 }
+

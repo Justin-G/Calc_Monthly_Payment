@@ -1,6 +1,6 @@
 #include "dai_kuan.h"
 #include "deng_e_ben_xi.h"
-
+#include "deng_e_ben_jin.h"
 class dai_kuan_factory
 {
 	public:
@@ -14,7 +14,8 @@ class dai_kuan_factory
 			    break;
 				
 			case 1:
-			break;
+				n_dai = new deng_e_ben_jin;
+				break;
 		}
 		
 		return n_dai;

@@ -5,8 +5,8 @@
 class deng_e_ben_xi:public dai_kuan
 {
 	public:		
-    	virtual double calc_yuehuan();
-		virtual void show_all();
+
+		 virtual double calc_yuehuan();
 };
 
 
