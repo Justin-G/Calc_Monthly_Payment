@@ -4,8 +4,11 @@
 
 class deng_e_ben_jin:public dai_kuan
 {
+
+		
 	public:		
     	virtual double calc_yuehuan();
+
 
 };
 
