@@ -18,6 +18,9 @@ class dai_kuan
 		double m_yihuan_yue;//已经还了多少月
 		double m_yihuan_jine;//已经还了的金额
 		double m_benyue;//本个还款月
+		
+
+		double m_yuehuan_benjin;
 
 		void calc_yuesu()//计算总共要还多少个月
 		{
@@ -29,6 +32,10 @@ class dai_kuan
 			m_yueli = m_nianli / MONTHS_PER_YEAR;
 		}
 	public:
+	
+		double get_yuehuan_benjin(void);
+		void set_yuehuan_benjin(void);
+		
 	
 		dai_kuan(double benjin = 0, double yuesu = 0,double niansu = 0, double nianli = 0,double yueli = 0,double yihuan_yue = 0,double yihuan_jine = 0,double benyue = 0)
 		{

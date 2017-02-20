@@ -77,3 +77,15 @@ void dai_kuan::set_yihuan_jine(double yihuan_jine)//设置已还金额
 {
 	m_yihuan_jine = yihuan_jine;
 }
+
+
+
+double dai_kuan::get_yuehuan_benjin(void)
+{
+	return m_yuehuan_benjin;
+}
+
+void dai_kuan::set_yuehuan_benjin(void)
+{
+	m_yuehuan_benjin = get_benjin() / get_yuesu();
+}
