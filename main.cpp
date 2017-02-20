@@ -80,9 +80,11 @@ int main(void)
 	}
 	else if(select == 1)
 	{
+		a->set_yuehuan_benjin();
 		while(a->get_yuesu() > a->get_yihuan_yue())
 		{
 			std::cout << "本月是第"<<a->get_yihuan_yue()<<"个月，应还金额："<< a->calc_yuehuan() <<std::endl;
+			std::cout << "已经还金额："<<a->get_yihuan_jine()<< std::endl;
 		}
 	}
 	else
